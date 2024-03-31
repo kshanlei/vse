@@ -384,9 +384,9 @@
 		var rightSrcString = "./media/image/vse_" + repo + "/" + imageName + ".png";
 		document.getElementById("left-image").src = leftSrcString;	
 		document.getElementById("right-image").src = rightSrcString;
-		//var opacity = $("#image_alpha").val().trim();
-		//document.getElementById("right-image").style.backgroundColor='white';
-		//document.getElementById("right-image").style.opacity = opacity;
+		//change the image label
+		document.getElementById("left-image-description").innerHTML = "Initial";
+		document.getElementById("right-image-description").innerHTML = "VSE";
 	}
 
 	function showButtons(obj) {
