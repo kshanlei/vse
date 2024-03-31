@@ -41,16 +41,27 @@
 	  padding: 20px;
 	}
 	
-	.col-25 {
+	.col-20 {
 	  float: left;
 	  width: 20%;
 	  margin-top: 6px;
 	}
 	
-	.col-75 {
+	.col-80 {
 	  float: left;
 	  width: 80%;
 	  margin-top: 6px;
+	}
+	
+	.col-40 {
+	  float: left;
+	  width: 40%;
+	}
+	
+	.col-60 {
+	  float: left;
+	  width: 60%;
+
 	}
 	
 	/* Clear floats after the columns */
@@ -61,7 +72,7 @@
 	}
 	
 	@media screen and (max-width: 600px) {
-	  .col-25, .col-75, input[type=submit] {
+	  .col-20, .col-80, .col-40, .col-60, input[type=submit] {
 	    width: 100%;
 	    margin-top: 0;
 	  }
@@ -138,7 +149,7 @@
 	}
 	
 	
-	.left-image-box img, .right-image-box img  {
+	.banner-image, .left-image-box img, .right-image-box img  {
 	    max-width: 100%;;
 		max-height: 100%;
 		display: inline;
@@ -283,52 +294,51 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script type="text/javascript">
 	var datumMap = {
-		"2008_cancelled_flights": "2008 cancelled flights",
+		"2008_cancelled_flights": "2008 Cancelled Flights",
 		"Abalone": "Abalone",
-		"Avila": "Avila",
-		"Barcelona_accident": "Barcelona accident",
+		"Avila":"Avila",
+		"Barcelona_accident": "Barcelona Accident",
 		"Basketball": "Basketball",
-		"BeijingPM2": "BeijingPM2",
+		"BeijingPM2": "Beijing PM2",
 		"Clothes": "Clothes",
 		"Condition_based_maintenance": "Condition based maintenance",
 		"Copter": "Copter",
 		"COVID-19_deaths": "COVID-19 deaths",
-		"Crowd_sourced_mapping": "Crowd sourced mapping",
+		"Crowd_sourced_mapping":"Crowd sourced mapping",
 		"CS_rankings": "CS rankings",
 		"Cup98LRN": "Cup98LRN",
 		"Diamonds": "Diamonds",
-		"Epileptic_seizure": "Epileptic seizure",
+		"Epileptic_seizure":"Epileptic Seizure Recognition Data Set",
 		"GaAsH6": "GaAsH6",
-		"Gas_sensor_array_drift": "Gas sensor array drift",
-		"Gesture_phase": "Gesture phase",
-		"GNFUV": "GNFUV",
+		"Gas_sensor_array_drift": "Gas Sensor Array Drift Dataset Data Set",
+		"Gesture_phase":"Gesture Phase",
+		"GNFUV":"GNFUV",
 		"Google_playstore_sentiment": "Google playstore sentiment",
-		"Grammatical_facial_expression": "Grammatical facial expression",
+		"Grammatical_facial_expression":"Grammatical facial expression",
 		"GridGena": "GridGena",
 		"Human_activity_recognition": "Human activity recognition",
-		"Manhattan": "Manhattan",
-		"Mnist_tsne": "Mnist tsne",
-		"MoCap": "MoCap",
-		"Music": "Music",
+		"Manhattan":"Manhattan",
+		"Mnist_tsne": "Mnist_tsne",
+		"MoCap":"MoCap",
+		"Music":"Music",
 		"News_popularity": "News popularity",
 		"News": "News",
-		"Nomao": "Nomao",
+		"Nomao":"Nomao",
 		"Paleontology": "Paleontology",
 		"Phyllotaxis": "Phyllotaxis",
 		"Satimage": "Satimage",
 		"Sensorless_drive_diagnosis": "Sensorless drive diagnosis",
-		"Swiss_roll_2d": "Swiss roll 2d",
-		"Swiss_roll_3d": "Swiss roll 3d",
-		"Telescope": "Telescope",
-		"tsne-brokenswiss": "tsne-brokenswiss",
-		"tsne-elec_board": "tsne-elec board",
-		"tsne-fashion": "tsne-fashion",
-		"tsne-helix": "tsne-helix",
-		"tsne-lenet_mnist_l0": "tsne-lenet mnist l0",
-		"tsne-lenet_mnist_l1": "tsne-lenet mnist l1",
-		"tsne-mnist": "tsne-mnist",
-		"tsne-swiss": "tsne-swiss",
-		"tsne-twinpeaks": "tsne-twinpeaks",
+		"Swiss_roll_2d":"Swiss roll 2d",
+		"Swiss_roll_3d":"Swiss roll 3d",
+		"Telescope":"Telescope",
+		"tsne-brokenswiss": "Broken Swissroll with TSNE projection",
+		"tsne-fashion": "Fashion with TSNE projection",
+		"tsne-helix": "Helix with TSNE projection",
+		"tsne-lenet_mnist_l0": "TSNE-LeNet MNIST l0",
+		"tsne-lenet_mnist_l1": "TSNE-LeNet MNIST l1",
+		"tsne-mnist": "MNIST with TSNE projection",
+		"tsne-swiss": "Swissroll with TSNE projection",
+		"tsne-twinpeaks": "Twinpeaks with TSNE projection",
 		"Wine": "Wine"
 	}
 		
@@ -336,7 +346,6 @@
 		for (var key in datumMap) {
 			$("#datum").append($("<option value=\"" + key + "\">" + datumMap[key] + "</option>"));
 		}
-		$("#datum").append($("<option value=\"" + key + "\">" + datumMap[key] + "</option>"));
 		document.getElementById("datum").value = "tsne-fashion";
 		updateAllImage();
 	}
@@ -447,14 +456,17 @@
 </head>
 <body>
 
-<h4 align="center" style="display: none;">Multi-Class Scatterplot : from visibility to perceivability</h4>
-
 <div class="container">
 		<div class="row banner">
-			<img id="banner-image" src="./media/image/banner.png">
+			<div class="col-40">
+				<h1 align="center">VSE(Voronoi-based Scatterplot Enchancement)</h1>
+			</div>
+			<div class="col-60">
+				<img class="banner-image" src="./media/image/banner.png">
+			</div>
 		</div>
 	<div class="row">
-		<div class="col-25">
+		<div class="col-20">
 			<form class="form-inline" method="post">
 				<label for="datum">Dataset:</label>
 				<select id="datum"  name="datum" value="datum" onChange="updateAllImage()">
@@ -479,7 +491,7 @@
 			</form>
 		</div>
 		
-		<div class="col-75">
+		<div class="col-80">
 			<div class="left-image-box">
 				<div class="father" onmouseover="showButtons(this)" onmouseout="hideButtons(this)" >
 					<button class="son son1" onclick="changeImage('init', 'left-image', this)">Initial</button>
