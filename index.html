@@ -214,7 +214,7 @@
 	  cursor: pointer;
 	  animate: 0.2s;
 	  box-shadow: 1px 1px 1px #000000;
-	  background: #33a3dc;
+	  background: #88ada6;
 	  border-radius: 5px;
 	  border: 1px solid #000000;
 	}
@@ -230,7 +230,7 @@
 	  margin-top: -11px;
 	}
 	input[type=range]:focus::-webkit-slider-runnable-track {
-	  background: #33a3dc;
+	  background: #88ada6;
 	}
 	input[type=range]::-moz-range-track {
 	  width: 100%;
@@ -238,7 +238,7 @@
 	  cursor: pointer;
 	  animate: 0.2s;
 	  box-shadow: 1px 1px 1px #000000;
-	  background: #33a3dc;
+	  background: #88ada6;
 	  border-radius: 5px;
 	  border: 1px solid #000000;
 	}
@@ -261,13 +261,13 @@
 	  color: transparent;
 	}
 	input[type=range]::-ms-fill-lower {
-	  background: #33a3dc;
+	  background: #88ada6;
 	  border: 1px solid #000000;
 	  border-radius: 10px;
 	  box-shadow: 1px 1px 1px #000000;
 	}
 	input[type=range]::-ms-fill-upper {
-	  background: #33a3dc;
+	  background: #88ada6;
 	  border: 1px solid #000000;
 	  border-radius: 10px;
 	  box-shadow: 1px 1px 1px #000000;
@@ -283,16 +283,27 @@
 	  cursor: pointer;
 	}
 	input[type=range]:focus::-ms-fill-lower {
-	  background: #33a3dc;
+	  background: #88ada6;
 	}
 	input[type=range]:focus::-ms-fill-upper {
-	  background: #33a3dc;
+	  background: #88ada6;
 	}
-
+	
+	.tip-box{
+		padding: 10px;
+		border: 1px solid #ddd;
+		border-radius: 4px;
+		-webkit-appearance: none;
+		margin: 5px 10px 5px 0;
+		width: 100%;
+		background-color: #A9A9A9		;
+		color: white;
+		text-align: justify;
+		font-family: "Times New Roman", Times, serif;
+	}
 
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<link rel="stylesheet" href="http://www.elementscss.com/css/elementscss.min.css">
 <script type="text/javascript">
 	var datumMap = {
 		"2008_cancelled_flights": "2008 Cancelled Flights",
@@ -460,12 +471,12 @@
 <div class="container">
 		<div class="row banner">
 			<div class="col-40">
-				<h2 align="center">VSE(Voronoi-based Scatterplot Enchancement)</h2>
-				<span class="el-icon-globe">Globe</span>
+				<h1 align="center">VSE(Voronoi-based Scatterplot Enchancement)</h1>
 			</div>
 			<div class="col-60">
 				<img class="banner-image" src="./media/image/banner.png">
 			</div>
+
 		</div>
 	<div class="row">
 		<div class="col-20">
@@ -481,15 +492,18 @@
 					<option value="su">SU</option>
 				</select>
 <!--
-				<label for="resolution">Resolution:</label>
-				<p><span id="resolutionValue">1000</span> (px)</p>
-				<input type="range" id="resolution" name="resolution" min="1000" max="2000" step="1000" value="1000" onchange="showResolutionValue()"/>
+				<label style="color:white;background-color: #88ada6;" for="resolution">Resolution:</label>
+				<p style="color:white;background-color: #88ada6;"><span id="resolutionValue">1000</span> (px)</p>
+				<input type="range" id="resolution" name="resolution" min="1000" max="2000" step="1000" value="1000" onchange="showResolutionValue()" disabled/>
 				
-				<label for="image_alpha">Image alpha:</label>
-				<p><span id="alphaValue">1</span></p>
-				<input type="range" id="image_alpha" name="image_alpha" min="0.5" max="1" step="0.1" value="1" onchange="showAlphaValue()"/>
-
+				<label style="color:white;background-color: #88ada6;" for="image_alpha">Image alpha:</label>
+				<p style="color:white;background-color: #88ada6;"><span id="alphaValue">1</span></p>
+				<input type="range" id="image_alpha" name="image_alpha" min="0.5" max="1" step="0.1" value="1" onchange="showAlphaValue()" disabled/>			
 -->
+			
+			<div class="tip-box">
+				<span>This website currently showcases the optimization outcomes of the VSE algorithm for 46 data sets. In the near future, it will also support your personal datasets and customized configurations.</span>
+				</div>
 			</form>
 		</div>
 		
