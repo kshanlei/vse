@@ -124,10 +124,15 @@
 	}
 
 	.banner{
-		text-align:center;
+		align-items:center;
 		background-color: white;
-	}
+		display: flex;
 
+	}
+	
+	.title {
+		text-align: center;
+	}
 
 	.left-image-box{
 		width: 50%;
@@ -302,10 +307,21 @@
 		font-family: "Times New Roman", Times, serif;
 	}
 
+
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script type="text/javascript">
 	var datumMap = {
+		"tsne-fashion": "Fashion with TSNE projection",
+		"tsne-mnist": "MNIST with TSNE projection",
+		"Mnist_tsne": "MNIST TSNE Full Data Set",
+		"tsne-helix": "Helix with TSNE projection",
+		"tsne-lenet_mnist_l0": "TSNE-LeNet MNIST l0",
+		"tsne-lenet_mnist_l1": "TSNE-LeNet MNIST l1",
+
+		"tsne-swiss": "Swissroll with TSNE projection",
+		"tsne-twinpeaks": "Twinpeaks with TSNE projection",
+				"tsne-brokenswiss": "Broken Swissroll with TSNE projection",
 		"2008_cancelled_flights": "2008 Cancelled Flights",
 		"Abalone": "Abalone",
 		"Avila":"Avila",
@@ -315,7 +331,6 @@
 		"Clothes": "Clothes",
 		"Condition_based_maintenance": "Condition based maintenance",
 		"Copter": "Copter",
-		"COVID-19_deaths": "COVID-19 deaths",
 		"Crowd_sourced_mapping":"Crowd sourced mapping",
 		"CS_rankings": "CS rankings",
 		"Cup98LRN": "Cup98LRN",
@@ -330,27 +345,17 @@
 		"GridGena": "GridGena",
 		"Human_activity_recognition": "Human activity recognition",
 		"Manhattan":"Manhattan",
-		"Mnist_tsne": "Mnist_tsne",
 		"MoCap":"MoCap",
 		"Music":"Music",
 		"News_popularity": "News popularity",
 		"News": "News",
 		"Nomao":"Nomao",
 		"Paleontology": "Paleontology",
-		"Phyllotaxis": "Phyllotaxis",
 		"Satimage": "Satimage",
 		"Sensorless_drive_diagnosis": "Sensorless drive diagnosis",
 		"Swiss_roll_2d":"Swiss roll 2d",
 		"Swiss_roll_3d":"Swiss roll 3d",
 		"Telescope":"Telescope",
-		"tsne-brokenswiss": "Broken Swissroll with TSNE projection",
-		"tsne-fashion": "Fashion with TSNE projection",
-		"tsne-helix": "Helix with TSNE projection",
-		"tsne-lenet_mnist_l0": "TSNE-LeNet MNIST l0",
-		"tsne-lenet_mnist_l1": "TSNE-LeNet MNIST l1",
-		"tsne-mnist": "MNIST with TSNE projection",
-		"tsne-swiss": "Swissroll with TSNE projection",
-		"tsne-twinpeaks": "Twinpeaks with TSNE projection",
 		"Wine": "Wine"
 	}
 		
@@ -470,8 +475,8 @@
 
 <div class="container">
 		<div class="row banner">
-			<div class="col-40">
-				<h1 align="center">VSE(Voronoi-based Scatterplot Enchancement)</h1>
+			<div class="col-40 title">
+				<h1>VSE(Voronoi-based Scatterplot Enchancement)</h1>
 			</div>
 			<div class="col-60">
 				<img class="banner-image" src="./media/image/banner.png">
@@ -488,7 +493,7 @@
 				<label for="overlap_removal">Overlap Removal (OR):</label>
 				<select id="overlap_removal" onChange="updateAllImage()">
 					<option value="">None</option>
-					<option value="gist">GIST</option>
+					<option value="gist" selected>GIST</option>
 					<option value="su">SU</option>
 				</select>
 <!--
@@ -502,7 +507,7 @@
 -->
 			
 			<div class="tip-box">
-				<span>This site is currently a static webpage that showcases the optimization outcomes of the VSE algorithm. It will support online real-time processing with your customized parameters from April 7, 2024</span>
+				<span>This site is currently a static webpage that showcases the optimization outcomes of the VSE algorithm. It will support online real-time processing with your customized parameters from April 7, 2024.</span>
 				</div>
 			</form>
 		</div>
