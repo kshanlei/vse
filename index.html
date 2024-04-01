@@ -70,11 +70,23 @@
 	  display: table;
 	  clear: both;
 	}
+	.banner{
+		align-items:center;
+		background-color: white;
+		display: flex;
+	}
+	
+	.title {
+		text-align: center;
+	}
 	
 	@media screen and (max-width: 600px) {
 	  .col-20, .col-80, .col-40, .col-60, input[type=submit] {
 	    width: 100%;
 	    margin-top: 0;
+	  }
+	  .banner{
+	  	display: block;
 	  }
 	}
 
@@ -121,18 +133,12 @@
 		flex-direction: column;
 		align-items: stretch;
 	  }
+	  .banner{
+	  	display: block;
+	  }
 	}
 
-	.banner{
-		align-items:center;
-		background-color: white;
-		display: flex;
 
-	}
-	
-	.title {
-		text-align: center;
-	}
 
 	.left-image-box{
 		width: 50%;
@@ -159,8 +165,6 @@
 		max-height: 100%;
 		display: inline;
 	}
-	
-
 
 	.father{
 		justify-content: center;
@@ -476,7 +480,7 @@
 <div class="container">
 		<div class="row banner">
 			<div class="col-40 title">
-				<h1>VSE(Voronoi-based Scatterplot Enchancement)</h1>
+				<h1>VSE (Voronoi-based Scatterplot Enchancement)</h1>
 			</div>
 			<div class="col-60">
 				<img class="banner-image" src="./media/image/banner.png">
