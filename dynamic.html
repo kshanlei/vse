@@ -336,6 +336,35 @@
         background-color: gray;
         pointer-events: none;
       }
+
+
+      label[class="tooltip"]{
+        padding: 12px 0px 12px 0;
+        margin: 5px 0px 5px 0;
+      }
+
+
+      .tooltiptext {
+        font-size: smaller;
+        position: absolute; 
+        z-index: 10;
+        width: 40%;
+        color: white;
+        background-color:#787878;
+        padding: 5px;
+        border-radius: 2px;
+        visibility: hidden;
+      }
+
+      .help-icon {
+        top: 10px; 
+        right: 30px; 
+        width: 15px;
+        cursor:pointer;
+        float:right;
+      }
+
+
     </style>
     <!--script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script-->
 
@@ -411,7 +440,12 @@
         var rangeValue = document.getElementById("image_alpha").value;
         document.getElementById("alphaValue").innerHTML = rangeValue;
       }
-
+      function showTooltiptext(){
+        document.getElementById("explain_imgcontrast").style.visibility = "visible";
+      }
+      function hideTooltiptext(){
+        document.getElementById("explain_imgcontrast").style.visibility = "hidden";
+      }
       function findKey(obj, value, compare = (a, b) => a === b) {
         return Object.keys(obj).find((k) => compare(obj[k], value));
       }
@@ -613,8 +647,9 @@
               onchange="showResolutionValue()"
             />
 
-            <label for="image_alpha">Color contrast:</label>
-            <p><span id="alphaValue">0</span></p>
+            <label class="tooltip" for="image_alpha" onmouseover="showTooltiptext()" onmouseleave="hideTooltiptext()">Color contrast:</label>     
+            <img src="./media/image/help.png" class="help-icon" onmouseover="showTooltiptext()" onmouseleave="hideTooltiptext()"/>
+            <p style="padding-left: 22px"><span id="alphaValue">0</span></p>
             <input
               type="range"
               id="image_alpha"
@@ -643,6 +678,13 @@
         </div>
 
         <div class="col-80">
+          <div id="explain_imgcontrast" class="tooltiptext" onmouseleave="hideTooltiptext()"> 
+            <p style="text-align: justify">Color contrast serves for improving the contrast between elements in the representation, and mainly improves further the saliency of class-outliers. This component leverages the Delaunay Triangulation (DT) of the scatterplot with the added artificial points (analogous to the Voronoi Tesselation). DT edges between real points and artificial points are removed, as well as edges between points of different classes. We thus obtain connected components in which we apply a ink dilution-like color spreading (i.e., the larger the connected component, the less saturated the color). The Color Contrast parameter controls the amplitude of color contrast between the less saturated areas (i.e., large connected components) and the more saturated areas (i.e., small connected components, or isolated nodes).</p >
+            <img width="47%" src="./media/image/connected_comp_color.png"/>
+            <img width="47%" src="./media/image/connected_comp_color_zoom.png"/>
+            <p style="text-align: justify"><i>Illustration of the Delaunay Triangulation after the removed edges. The deconnection creates connected components in which color is spread.</i></p>
+        </div>
+
           <div class="left-image-box">
             <div
               class="father"
